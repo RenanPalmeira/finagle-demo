@@ -9,7 +9,7 @@ object Client extends App {
     val client = Thrift.client.newIface[TemperatureService.FutureIface]("localhost:8080")
     
     val display = client.hi()
-        .onSuccess({ response =>cprintln("Received response: " + response) })
+        .onSuccess({ response => println("Received response: " + response) })
 
     Await.result(display)
 }
